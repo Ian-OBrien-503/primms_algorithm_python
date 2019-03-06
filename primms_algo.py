@@ -26,7 +26,7 @@ def output_distance_between_cities():
         for city2 in graph[city1]:
             print(city1, city2, (graph[city1])[city2])
 
-
+#builds dictonary of the closest city and its distance from any given city
 def find_closest_city_from_any_city(closest_city):
     for city1 in graph:
         min_dist = math.inf
