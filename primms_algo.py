@@ -5,7 +5,7 @@ dict = {}
 closest_city = {}
 visited_city = {}
 mst = []
-
+unvisited = []
 
 #build adjacency list using dict of dict
 file = open("cities.txt", "r")
@@ -37,21 +37,51 @@ def find_closest_city_from_any_city(closest_city):
                 closest = city2
         closest_city[city1] = {closest: min_dist}
 
+#this function traverses existing mst to find the next vertex to add to the tree
+def find_next(mst, total_distance):
+    next = {}
+    min_dist = 9999
+    print(unvisited)
+    for city in mst:
+        if(city in unvisited):
+            test = closest_city[city]
+            for key in test:
+                if test[key] < min_dist and key in unvisited:
+                    min_dist = test[key]
+                    next_city = key
+                    next = {next_city: min_dist}
+        else:
+            continue
+    for key in next:
+        mst.append(key)
+        unvisited.remove(key)
+    return next
+
 
 #find the minimum spanning tree using primms algo
-def primms_algo(graph, closest_city, dict):
-    total_distance = 0
-    root = "Albany"
-    mst.append(root)
-    next_city = closest_city[root]
-    total_distance += (closest_city[root])[next_city]
-    print(total_distance)
-    print(next_city)
-    print(visited_city)
+def primms_algo():
 
+    #variables
+    total_distance = 0
+    for testing in graph:
+        unvisited.append(testing)
+
+    #pick arbitrary root
+    root = "Albany"
+    print("starting @ Albany")
+    mst.append(root)
+    unvisited.remove(root)
+
+    #while we have visited all nodes find next node to visit and add it to tree
+    while unvisited:
+        test = find_next(mst, total_distance)
+        for key in test:
+            total_distance += test[key]
+            print("visting", key, "new total distance is", total_distance)
+
+
+output_distance_between_cities()
+print("============\n")
 find_closest_city_from_any_city(closest_city)
-print(closest_city)
-#primms_algo(graph, closest_city, dict)
-#print(find_closest_city_from_any_city(closest_city))
-#print(graph)
-#print(output_distance_between_cities())
+#print(closest_city)
+primms_algo()
