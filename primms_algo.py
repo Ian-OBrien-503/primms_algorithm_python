@@ -60,7 +60,7 @@ def prims_algo():
         print("adding", temp, "to mst, new total distance:", total_distance)
         edge_list = {temp[0] : temp[1]}
 
-    print("\n\ttotal_distance for minimum spanning tree:", total_distance)
+    print("total_distance for minimum spanning tree:", total_distance)
 
 
 #order here does matter for function calls
