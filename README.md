@@ -1,14 +1,14 @@
 ## Prim's Algorithm
 implemented primms algorithm in python using adjacency list via a dictionary of dictionaries
 
-## build instructions
+## Build Instructions
 make sure you have python intreperter installed:
  [installation instructions](https://docs.python-guide.org/starting/install3/linux/)
 
 - clone current directory via: $ git clone https://github.com/Ian-OBrien-503/primms_algorithm_python.git
 - run intrepreter/code with following: $ python primms_algo.py or $ python3 primms_algo.py
 
-## about
+## About
 I chose to develop this project using python because it seems to be the fastest language for prototyping algorithms, in my opinion. I ran into several problems trying to implement the algorithm from scratch without using any resources. I finally caved and began to look at a few resources online only to find that most of the examples used adjacency matrices rather than adjacency lists. This is a very similar approach but I chose not to use any of these sources.
 
 I turned to "Introduction to the Design and Analysis of Algorithms" by Anany Levitin(3rd edition) section 9.1 for the pseudocode for prims algorithm.
