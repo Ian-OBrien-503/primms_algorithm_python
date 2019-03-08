@@ -1,4 +1,4 @@
-## primms_algorithm_python  
+## Prim's Algorithm
 implemented primms algorithm in python using adjacency list via a dictionary of dictionaries
 
 ## build instructions
