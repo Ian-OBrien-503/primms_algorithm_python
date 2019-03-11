@@ -1,5 +1,11 @@
 ## Prim's Algorithm
-implemented primms algorithm in python using adjacency list via a dictionary of dictionaries
+implemented primms algorithm in python using adjacency list via a dictionary of dictionaries.
+
+Rough definition of Prim's algorithm:  
+1. pick an arbitrary starting vertex
+2. add the vertex to the miniumum spanning tree & remove vertex from unvisited vertex list
+3. find the next closest vertex from minimum spanning tree to vertex not yet in mimum spanning tree and is in unvisited list 
+4. repeat steps 2 and 3 until we unvisited list is empty
 
 ## Build Instructions
 make sure you have python intreperter installed:
